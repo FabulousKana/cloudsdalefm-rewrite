@@ -8,24 +8,7 @@
 
 justRunIt = 1; /* Boolean, type false or 0 if you want to use functions for something else. */
 
-function detectUnsupportedBrowser()
-{
-    if (navigator.userAgent.indexOf("Trident") >= 0)
-    {
-        console.log(navigator.userAgent);
-        console.log(document.getElementById("OBWarning").style.display = "block");
-        return 1;
-        /*
-         *  Because Internet Explorer uses very obsolete technology
-         *  and Microsoft Edge is now official MS browser we decided
-         *  to NOT support IE, sorry.
-         */
-    }
-    return 0;
-}
-
-function runPlayer()
-{
+function runPlayer() {
     /*
      *  DIV with ID "player" MUST exist.
      */
@@ -64,8 +47,7 @@ texts = new Array(
 );
 var insideText = texts[Math.floor(Math.random()*texts.length)];
     
-function nextStep(index = 0)
-{
+function nextStep(index = 0) {
     result += insideText.charAt(index);
     document.getElementById("typingMachine").innerHTML = result + blinkSpan;
     if(result.length < insideText.length)
@@ -76,13 +58,8 @@ function nextStep(index = 0)
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- */
 
-if (justRunIt)
-{
-    var browserstatus = detectUnsupportedBrowser();
-    if (!browserstatus)
-    {
-        runPlayer();
-        nextStep();
-        document.getElementById("logo").onclick = function(){ window.location = "https://www.cloudsdalefm.net/"; };
-    }
+if (justRunIt) {
+    runPlayer();
+    nextStep();
+    document.getElementById("logo").onclick = function(){ window.location = "https://www.cloudsdalefm.net/"; };
 }
