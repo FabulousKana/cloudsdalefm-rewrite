@@ -1,0 +1,8 @@
+ie.js
+favicon.png
+*.woff2
+/player/*
+!/player/README.md
+/videos
+/keys
+/images

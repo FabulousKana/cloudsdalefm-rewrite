@@ -6,7 +6,7 @@
 
 body 
 {
-    background: url("images/background.png") no-repeat fixed;
+    background: url("/images/background.png") no-repeat fixed;
     background-size: cover;
     margin: 0;
     margin-top: 20px;
@@ -30,6 +30,7 @@ a:link, a:visited
         Yeah, I didn't too. Fix ur things, Microsoft */
     width: 75%;
     height: auto;
+    box-shadow: 0px 2px 5px 2px rgba(10, 26, 38, 0.6);
 }
 
 .topbar
@@ -41,7 +42,7 @@ a:link, a:visited
 #logo
 {
     position: relative;
-    background: url("images/current-logo-smaller.png") no-repeat center;
+    background: url("/images/current-logo-smaller.png") no-repeat center;
     background-size: cover;
     width: 260px;
     height: 100px;
@@ -260,6 +261,18 @@ a:link, a:visited
     margin-right: 20px;
 }
 
+.cacheMessage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    text-align: center;
+    height: 20px;
+    background: #FFC541;
+}
+
 @keyframes blink
 {
     from, to
@@ -309,6 +322,7 @@ a:link, a:visited
     .content
     {
         width: 100%;
+        box-shadow: none;
     }
     video, #typingMachine
     {

@@ -31,8 +31,8 @@ function runPlayer()
      */
     new CloudsdalePlayer("player", {
         webTitle: 0,
-        contextMenu: 0,
-        background: 0
+        background: 0,
+        style: false
     });
     return 0;
 }
@@ -60,7 +60,7 @@ texts = new Array(
     "You Pinkie Promised!",
     "Chwytaj za pióro; do Księżniczki!",
     /* Other */
-    "for (song in dir('coolmusak/')) {play(song); }"
+    "for (song in dir('coolmusak/')) { play(song); }"
 );
 var insideText = texts[Math.floor(Math.random()*texts.length)];
     
