@@ -3,7 +3,7 @@
  * Don't move it to any directory, it has to stay in /
  */
 "use strict";
-var cacheName = "sw-cache-cdfm-v8"
+var cacheName = "sw-cache-cdfm-v9"
 var cacheStaticFiles = [
     "/manifest.json",
     "/favicon.png",

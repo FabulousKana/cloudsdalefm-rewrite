@@ -5,7 +5,7 @@
  */
 
 
-
+(function() {
 justRunIt = 1; /* Boolean, type false or 0 if you want to use functions for something else. */
 
 function runPlayer() {
@@ -63,3 +63,4 @@ if (justRunIt) {
     nextStep();
     document.getElementById("logo").onclick = function(){ window.location = "https://www.cloudsdalefm.net/"; };
 }
+})()
