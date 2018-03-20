@@ -3,11 +3,11 @@
  * Don't move it to any directory, it has to stay in /
  */
 "use strict";
-var cacheName = "sw-cache-cdfm-v9"
+var cacheName = "sw-cache-cdfm-v12"
 var cacheStaticFiles = [
     "/manifest.json",
     "/favicon.png",
-    "/ie.js"
+    "/js/ie.js"
 ]
 var cacheDynamic = [
     /\/images\//g,
@@ -16,7 +16,8 @@ var cacheDynamic = [
     /\/player\/images\//g
 ] // regex
 var neverCache = [
-    "/stream"
+    "/stream",
+    "/api/"
 ]
 
 self.addEventListener("install", function(e) {
@@ -43,9 +44,11 @@ self.addEventListener('activate', function(e) {
 self.addEventListener("fetch", function(e) {
     var request = e.request
 
-    if((request.cache === "no-cache")
-    || (request.cache === "no-store") 
-    || (request.cache === "only-if-cached" && request.mode !== 'same-origin')
+    // don't cahce anyting that
+    if((!request.url.includes("cloudsdalefm.net") && request.url.startsWith("http")) // is not on the same server
+    || (request.cache === "no-cache") 
+    || (request.cache === "no-store") // have cache setting
+    || (request.cache === "only-if-cached" && request.mode !== 'same-origin') // is apparently crashing
     ) return;
 
     if(request.cache === "reload") {

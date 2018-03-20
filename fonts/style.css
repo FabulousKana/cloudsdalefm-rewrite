@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Archivo Regular'), local('Archivo-Regular'), url("archivo-latin.woff2") format('woff2');
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Archivo Regular'), local('Archivo-Regular'), url("archivo-latin.woff2") format('woff2');
 }
 @font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Archivo Regular'), local('Archivo-Regular'), url("archivo-latin-ext.woff2") format('woff2');
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Archivo Regular'), local('Archivo-Regular'), url("archivo-latin-ext.woff2") format('woff2');
 }
 @font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Barlow Regular'), local('Barlow-Regular'), url("barlow-latin.woff2") format('woff2');
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Barlow Regular'), local('Barlow-Regular'), url("barlow-latin.woff2") format('woff2');
 }
 @font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Barlow Regular'), local('Barlow-Regular'), url("barlow-latin-ext.woff2") format('woff2');
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Barlow Regular'), local('Barlow-Regular'), url("barlow-latin-ext.woff2") format('woff2');
 }

@@ -12,7 +12,6 @@ if ('serviceWorker' in navigator || false) {
         navigator.serviceWorker
             .register(swUrl, { scope: "/" })
             .then(registration => {
-                registration.update();
                 registration.onupdatefound = () => {
                     const installingWorker = registration.installing;
                     installingWorker.onstatechange = () => {
@@ -42,10 +41,10 @@ const loadSchedule = () => {
     const DOM = document.getElementById("schedule")
     if(!DOM) return;
     const days = DOM.getElementsByTagName("tr")
-    fetch("/data/scheluder.json", { cache: "no-store" })
+    fetch("api/data/scheluder", { cache: "no-store" })
         .then(res => res.json())
-        .then(data => {
-            const val = Object.values(data)
+        .then(({ scheluder }) => {
+            const val = Object.values(scheluder)
             for(let i=0;i<days.length;i++) {
                 let text = ""
                 const schedule = Object.keys(val[i]) 
@@ -71,11 +70,11 @@ const createPartner = (name, web, img) => {
 const loadPartners = () => {
     const DOM = document.getElementById("partners")
     if(!DOM) return;
-    fetch("/data/partners.json", { cache: "no-store" })
+    fetch("api/data/partners", { cache: "no-store" })
         .then(res => res.json())
-        .then(data => {
-            for(const partner of Object.keys(data)) {
-                const info = data[partner]
+        .then(({ partners }) => {
+            for(const partner of Object.keys(partners)) {
+                const info = partners[partner]
                 const node = createPartner(partner, info.webpage, info.image || `/images/banners/${partner}.png`)
                 DOM.appendChild(node)
             }
