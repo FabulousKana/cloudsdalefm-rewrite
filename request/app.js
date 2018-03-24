@@ -22,6 +22,8 @@ promptBG.appendChild(prompt)
 
 const buttonClass = "songPagesRequest"
 
+const cache = {}
+
 function fetchPage(page) {
     if(cache[`p${page}`]) return Promise.resolve(cache[`p${page}`])
     return fetch(`https://www.cloudsdalefm.net/api/data/songs?page=${page-1}&size=${songsPerPage}`) // change to /api/data/songs
