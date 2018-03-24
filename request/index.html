@@ -23,7 +23,7 @@
         <link rel="icon" type="image/png" href="/favicon.png"/>
         <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
         <meta name="theme-color" content="#0a1a26">
-        <script src="app.js"></script>
+        <script src="./app.js"></script>
     </head>
     <body>
         
@@ -58,10 +58,10 @@
                    <source src="/videos/pinkie.mp4" type="video/mp4"/>
                 </video>
                 <div id="navigation">
-                    <button class="active">Główna</button>
+                    <a href="/"><button>Główna</button></a>
                     <a href="https://discord.gg/cCa4xBk" rel="noopener noreferrer"><button>Czat</button></a>
                     <a href="/contact.html"><button>Kontakt</button></a>
-                    <a href="/request/"><button>Piosenki</button></a>
+                    <button class="active">Piosenki</button>
                 </div>
                 <div id="typingMachine"></div>
                 <div class="links">
@@ -70,52 +70,35 @@
                 </div>
             </div>
             <div class="info">
-                <h2>Rekrutujemy! <a href="/contact.html">Wyślij maila</a> już dziś!</h2>
-                <div class="scheduler" id="schedule">
-                    <!-- ------------------------- SCHEDULER ------------------------------- -->
+                <style>
+                    .songPagesPrev, .songPagesNext, .songPagesRequest {
+                        width: 50px;
+                        height: 20px;
+                        background: red;
+                    }
+                    .songPagesNext {
+                        background: green !important;
+                    }
+                    .songPagesRequest {
+                        background: cyan !important;
+                    }
+                </style>
+                <div id="searchHeader">
+                    <input class="searchBox" type="text" placeholder="Wyszukaj piosenke">
+                </div>
+                <div class="results" id="songSearchResults">
                     <table>
-                        <tr>
-                            <td><b>Poniedziałek</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
-                        <tr>
-                            <td><b>Wtorek</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
-                        <tr>
-                            <td><b>Środa</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
-                        <tr>
-                            <td><b>Czwartek</b></td>
-                            <td>20:00 - Elitarna sekcja zabawowa</td>
-                        </tr>
-                        <tr>
-                            <td><b>Piątek</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
-                        <tr>
-                            <td><b>Sobota</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
-                        <tr>
-                            <td><b>Niedziela</b></td>
-                            <td>Dzień wolny</td>
-                        </tr>
+                        <thead>
+                            <th>ID</th>
+                            <th>Artysta</th>
+                            <th>Tytół</th>
+                            <th>Zamów</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
-                    <!-- ------------------------------------------------------------------- -->
                 </div>
-                <div class="friends">
-                    <p>Zajrzyj również do naszych dobrych znajomych:</p>
-                    <hr/>
-                    <div class="imgs" id="partners"></div>
-                    <hr/>
-                    <a href="https://changecopyright.org/pl/" target="_blank">changecopyright.org</a> 🇪🇺
-                </div>
-            </div>
-            <div class="legal">
-                <p><a href='http://kana-projects.vxm.pl/cdfm2000/' target='_blank'>ie</a>, <a href='https://help.cloudsdalefm.net/'>helpdesk</a>, <a href="https://github.com/FabulousKana/cloudsdalefm-rewrite" rel="noopener noreferrer" target="_blank">open-source</a>, cloudsdalefm.net &copy; 2017-2018</p>
-            </div>
+            </div>              
         </div>
         <script type="text/javascript" src="/js/script.js"></script>
     </body>
