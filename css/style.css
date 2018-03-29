@@ -90,7 +90,6 @@ a:link, a:visited {
     left: -10%;
     width: 120%;
     height: 120%;
-    filter: blur(20px);
 }
 
 #typingMachine {

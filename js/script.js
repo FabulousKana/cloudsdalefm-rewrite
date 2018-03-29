@@ -43,7 +43,9 @@ texts = new Array(
     "You Pinkie Promised!",
     "Chwytaj za pióro; do Księżniczki!",
     /* Other */
-    "for (song in dir('coolmusak/')) { play(song); }"
+    "for (song in dir('coolmusak/')) { play(song); }",
+    "FOR %%i IN (music\\*.mp3) DO PLAY.EXE %%i",
+    "for(const song in fs.readDir('music/')) { play(song); }"
 );
 var insideText = texts[Math.floor(Math.random()*texts.length)];
     

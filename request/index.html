@@ -24,6 +24,7 @@
         <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
         <meta name="theme-color" content="#0a1a26">
         <script src="./app.js"></script>
+        <link rel="stylesheet" type="text/css" href="/request/style.css"/>
     </head>
     <body>
         
@@ -61,7 +62,7 @@
                     <a href="/"><button>Główna</button></a>
                     <a href="https://discord.gg/cCa4xBk" rel="noopener noreferrer"><button>Czat</button></a>
                     <a href="/contact.html"><button>Kontakt</button></a>
-                    <button class="active">Piosenki</button>
+                    <button class="active">Zamów</button>
                 </div>
                 <div id="typingMachine"></div>
                 <div class="links">
@@ -70,19 +71,6 @@
                 </div>
             </div>
             <div class="info">
-                <style>
-                    .songPagesPrev, .songPagesNext, .songPagesRequest {
-                        width: 50px;
-                        height: 20px;
-                        background: red;
-                    }
-                    .songPagesNext {
-                        background: green !important;
-                    }
-                    .songPagesRequest {
-                        background: cyan !important;
-                    }
-                </style>
                 <div id="searchHeader">
                     <input class="searchBox" type="text" placeholder="Wyszukaj piosenke">
                 </div>
@@ -91,14 +79,17 @@
                         <thead>
                             <th>ID</th>
                             <th>Artysta</th>
-                            <th>Tytół</th>
+                            <th>Tytuł</th>
                             <th>Zamów</th>
                         </thead>
                         <tbody>
                         </tbody>
                     </table>
                 </div>
-            </div>              
+            </div>    
+            <div class="legal">
+                <p><a href='http://kana-projects.vxm.pl/cdfm2000/' target='_blank'>ie</a>, <a href='https://help.cloudsdalefm.net/'>helpdesk</a>, <a href="https://github.com/FabulousKana/cloudsdalefm-rewrite" rel="noopener noreferrer" target="_blank">open-source</a>, cloudsdalefm.net &copy; 2017-2018</p>
+            </div>          
         </div>
         <script type="text/javascript" src="/js/script.js"></script>
     </body>

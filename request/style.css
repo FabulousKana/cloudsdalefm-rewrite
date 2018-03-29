@@ -1,0 +1,89 @@
+input[type=text]
+{
+	border: 0 #223549;
+	background: #081b30;
+	color: white;
+	min-height: 30px;
+	padding: 10px;
+	min-width: 50%;
+	border-radius: 10px;
+	display: block;
+	margin: 8px auto;
+	outline: 0;
+	transition: ease-in-out .2s;
+}
+input[type=text]:hover, input[type=text]:focus
+{
+	background: #133051;
+	border: solid 1px #081b30;
+	min-height: 27px;
+	transform: translateY(-2px);
+}
+.songPagesPrev, .songPagesNext, .songPagesRequest
+{
+	background: rgba(255, 255, 255, .9);
+	text-align: center;
+	border-radius: 5px;
+    width: 50px;
+    height: 20px;
+	display: inline-block;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
+.songPagesPrev:hover, .songPagesNext:hover, .songPagesRequest:hover
+{
+	background: rgba(255, 255, 255, .7);
+}
+.songPagesRequest
+{
+	transform: translateX(30%);
+	padding: 1px;
+}
+#searchHeader
+{
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+}
+.pageName
+{
+	display: inline-block;
+	margin: 20px;
+}
+table
+{
+	position: relative;
+	background: rgba(0, 0, 0, .2);
+	border-radius: 15px;
+	margin: 0 auto;
+	width: 85%;
+	max-width: 85%;
+}
+td
+{
+	padding: 7px;
+}
+tr:nth-child(2n+1)
+{
+	background: rgba(0, 0, 0, .05);
+}
+th:nth-child(1) {
+    width: 20px;
+}
+th:nth-child(2) {
+    width: 40%;
+}
+th:nth-child(3) {
+    width: 50%;
+}
+.songPromptBG
+{
+	background: rgba(0, 0, 0, .4);
+	padding: 8px;
+	margin-top: 5px;
+}
+.hidden
+{
+	display: none;
+}
