@@ -3,7 +3,7 @@
  * Don't move it to any directory, it has to stay in /
  */
 "use strict";
-var cacheName = "sw-cache-cdfm-v19"
+var cacheName = "sw-cache-cdfm-v20"
 var cacheStaticFiles = [
     "/manifest.json",
     "/favicon.png",
@@ -46,7 +46,6 @@ self.addEventListener('activate', function(e) {
 self.addEventListener("fetch", function(e) {
     var request = e.request
 
-    if(neverCache.some(function(v) { return request.url.includes(v) })) return;
     // don't cahce anyting that
     if((!request.url.includes("cloudsdalefm.net") && request.url.startsWith("http")) // is not on the same server
     || (request.cache === "no-cache") 
@@ -69,6 +68,8 @@ self.addEventListener("fetch", function(e) {
         )
         return;
     }
+
+    if(neverCache.some(function(v) { return request.url.includes(v) })) return;
 
     e.respondWith(
         caches.open(cacheName).then(function (cache) {

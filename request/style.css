@@ -1,89 +1,270 @@
-input[type=text]
-{
-	border: 0 #223549;
-	background: #081b30;
-	color: white;
-	min-height: 30px;
-	padding: 10px;
-	min-width: 50%;
-	border-radius: 10px;
-	display: block;
-	margin: 8px auto;
-	outline: 0;
-	transition: ease-in-out .2s;
+
+#requestAPP * {
+  box-sizing: border-box;
 }
-input[type=text]:hover, input[type=text]:focus
-{
-	background: #133051;
-	border: solid 1px #081b30;
-	min-height: 27px;
-	transform: translateY(-2px);
+
+.primary {
+    background-color: rgb(79, 127, 216) !important;
 }
-.songPagesPrev, .songPagesNext, .songPagesRequest
-{
-	background: rgba(255, 255, 255, .9);
-	text-align: center;
-	border-radius: 5px;
-    width: 50px;
-    height: 20px;
-	display: inline-block;
-	color: black;
-	font-weight: bold;
-	cursor: pointer;
+
+.error {
+    background-color: rgb(231, 50, 96) !important;
 }
-.songPagesPrev:hover, .songPagesNext:hover, .songPagesRequest:hover
-{
-	background: rgba(255, 255, 255, .7);
+
+.text--primary {
+    color: rgb(79, 127, 216) !important;
 }
-.songPagesRequest
-{
-	transform: translateX(30%);
-	padding: 1px;
+
+.text--error {
+    color: rgb(231, 50, 96) !important;
 }
-#searchHeader
-{
-	text-align: center;
-	color: white;
-	margin-top: 20px;
+
+.text--white {
+    color: white !important;
 }
-.pageName
-{
-	display: inline-block;
-	margin: 20px;
+
+.request {
+    display: block;
+    margin: 50px auto;
+    padding: 5px;
+    max-width: 90%;
 }
-table
-{
-	position: relative;
-	background: rgba(0, 0, 0, .2);
-	border-radius: 15px;
-	margin: 0 auto;
-	width: 85%;
-	max-width: 85%;
+
+.results {
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255,255,255,0.5);
+    padding: 5px 2px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
 }
-td
-{
-	padding: 7px;
+
+.entry {
+    display: flex;
+    padding: 5px 0px;
+    margin: 1px 0px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 2px;
 }
-tr:nth-child(2n+1)
-{
-	background: rgba(0, 0, 0, .05);
+.entry:hover {
+    background-color: rgba(0,0,0,0.2)
 }
-th:nth-child(1) {
-    width: 20px;
+.entry:active {
+    background: rgba(11,11,11,0.7)
 }
-th:nth-child(2) {
-    width: 40%;
+
+.entry .id {
+    display: inline-flex;
+    flex: 0 1 40px;
+    justify-content: center;
 }
-th:nth-child(3) {
-    width: 50%;
+
+.entry .data {
+    flex: 1 0 auto;
+    display: inline-flex;
 }
-.songPromptBG
-{
-	background: rgba(0, 0, 0, .4);
-	padding: 8px;
-	margin-top: 5px;
+
+.entry span.title {
+    color: white;
+    flex: 0 1 50%;
 }
-.hidden
-{
-	display: none;
+
+.entry span.artist {
+    font-weight: bold;
+    color: rgba(255,255,255,0.8)
+}
+
+.entry-error {
+    padding: 2px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .p-content {
+    flex: 0 1 auto;
+    background: rgb(18, 22, 27);
+    padding: 15px 15px 5px 15px;
+    border-radius: 5px;
+    min-width: 400px;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    flex-direction: column;
+}
+
+.elevate, .popup .p-content {
+    box-shadow: 
+        1px 4px 2px -3px rgba(0, 0, 0, 0.2), 
+        0px 2px 6px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.popup p {
+    margin: 5px 0px 0px 10px;
+}
+
+.popup p.small {
+    font-size: 0.8rem;
+}
+
+.popup p.bold {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.popup .p-title {
+    font-weight: bold;
+}
+
+.popup .p-buttons {
+    display: flex;
+    padding: 5px;
+    flex-direction: row-reverse;
+}
+
+.popup .button {
+    padding: 8px 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 4px 10px;
+    cursor: pointer;
+    user-select: none;
+    min-width: 74px;
+}
+
+.popup .button.primary:hover {
+    background-color: rgb(128, 164, 231) !important;
+}
+
+.popup .button.error:hover {
+    background-color: rgb(231, 78, 116) !important;
+}
+
+.request .nav {
+    display: flex;
+    align-items: center;
+}
+
+.request .pagination {
+    display: flex;
+    flex: 1 0 60%;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.request .pagination .pages {
+    width: 100%;
+}
+
+.request .pagination .page, .pagination .action {
+    height: 38px;
+    width: 38px;
+    background-color: rgb(245, 245, 245);
+    color: rgba(0,0,0,0.8);
+    flex: 0 0 auto;
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all linear 0.15s;
+    box-shadow: 
+        0px 3px 1px -2px rgba(0,0,0,0.2), 
+        0px 2px 2px 0px rgba(0,0,0,0.14), 
+        0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.request .pagination .action {
+    height: 28px;
+    min-width: 28px;
+    padding: 0px 24px;
+    transition: all linear 0.15s;
+}
+
+.request .pagination .action.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: default;
+}
+
+.request .search {
+    margin-right: 20px;
+}
+
+.request .search .search-input {
+    height: 38px;
+    min-width: 250px;
+    display: inline-flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: all ease-out .1s;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 
+        0px 2px 2px 0px rgba(0, 0, 0, 0.6);
+}
+
+.request .search .search-input:focus-within {
+    box-shadow: 0px 0px 0px 2px #32538c;
+}
+
+.request .search input {
+    background-color: transparent;
+    border: none;
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 0px 5px;
+    color: white;
+    display: inline-block;
+    outline: none;
+}
+
+.request .search-button {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 4px;
+    user-select: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: .75rem;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.request .search-button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 856px) {
+    .request .nav {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
 }

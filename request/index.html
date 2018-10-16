@@ -23,7 +23,7 @@
         <link rel="icon" type="image/png" href="/favicon.png"/>
         <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
         <meta name="theme-color" content="#0a1a26">
-        <script src="./app.js"></script>
+        <script src="/js/vDOM.js"></script>
         <link rel="stylesheet" type="text/css" href="/request/style.css"/>
     </head>
     <body>
@@ -70,23 +70,8 @@
                     <a href="https://www.facebook.com/cloudsdaleFM.net/" rel="noopener noreferrer"><img src="/images/facebook.png" alt="Facebook"/></a>
                 </div>
             </div>
-            <div class="info">
-                <div id="searchHeader">
-                    <input class="searchBox" type="text" placeholder="Wyszukaj piosenke">
-                </div>
-                <div class="results" id="songSearchResults">
-                    <table>
-                        <thead>
-                            <th>ID</th>
-                            <th>Artysta</th>
-                            <th>Tytuł</th>
-                            <th>Zamów</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>    
+            <div id="requestAPP"></div>
+            <script src="./app.js"></script>
             <div class="legal">
                 <p><a href='http://kana-projects.vxm.pl/cdfm2000/' target='_blank'>ie</a>, <a href='https://help.cloudsdalefm.net/'>helpdesk</a>, <a href="https://github.com/FabulousKana/cloudsdalefm-rewrite" rel="noopener noreferrer" target="_blank">open-source</a>, cloudsdalefm.net &copy; 2017-2018</p>
             </div>          

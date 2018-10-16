@@ -139,7 +139,13 @@ a:link, a:visited {
 }
 
 #navigation button:hover, #navigation button.active {
-    background: rgba(255, 255, 255, 0.2);
+  padding: 0px 40px 0px 0px;
+  font-size: 18px;
+    background-image: url('/images/rd_head.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: 88%;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .links {
@@ -163,37 +169,93 @@ a:link, a:visited {
     background: rgba(19, 58, 99, 1);
     height: auto;
 }
+.results {
+    color: white;
+}
 
 .info h2 {
     color: white;
     text-align: center;
 }
 
+.scheduler, .scheduler * {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+hr.divider-1 {
+    width: 80%;
+    opacity: .5;
+}
+
 .scheduler {
     position: relative;
     display: inline-table;
     width: 75%;
-}
-
-.scheduler table, th, td {
-    padding: 15px;
-    color: white;
-}
-
-.scheduler b {
-    margin-right: 50px;
-}
-
-.scheduler p {
-    text-align: center;
-    color: white;
-}
-
-.scheduler table {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 60px;
+    border-radius: 25px;
+    margin-top: 20px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.scheduler tr {
+    margin: 2px;
+}
+
+.scheduler .day {
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.scheduler .day > h1 {
+    font-size: 20px;
+}
+
+.scheduler .s-content[data-empty="true"] {
+    margin-left: 10%;
+}
+
+.scheduler .s-content {
+    color: rgba(255,255,255,0.90);
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    padding-left: 45px;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+.scheduler .hour, .scheduler .data {
+    display: inline-flex;
+}
+
+.scheduler .hour {
+    flex: 1 1 auto;
+}
+
+.scheduler .data {
+    flex: 1 0 85%;
+    flex-direction: column;
+}
+
+.scheduler .data .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.scheduler .data .author {
+    margin: 2px 0px 0px 5px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.75)
+}
+
+.scheduler .data .author > span {
+    font-weight: bold;
+    font-size: 15px;
+    color: inherit;
 }
 
 .friends {
@@ -268,8 +330,7 @@ a:link, a:visited {
 @media only screen and (max-width: 1000px) {
     .scheduler {
         width: 100%;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: auto;
     }
     .friends {
         width: 100%;
@@ -309,9 +370,6 @@ a:link, a:visited {
         width: 40px;
         height: 40px;
     }
-    .scheduler table {
-        margin: 30px;
-    }
 }
 
 @media only screen and (max-width: 685px) {
@@ -321,13 +379,10 @@ a:link, a:visited {
     table, th, td {
         padding: 5px;
     }
-    .scheduler {
-        margin: 0;
-    }
     table {
         transform: translateX(-20px);
     }
-    .scheduler p {
+    .scheduler {
         letter-spacing: -1px;
         text-align: left;
         margin-left: 10px;
@@ -336,4 +391,9 @@ a:link, a:visited {
         margin: 0;
         width: 100px;
     }
+}
+
+.mailprotect {
+	unicode-bidi: bidi-override;
+	direction: rtl;
 }

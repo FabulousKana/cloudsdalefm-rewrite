@@ -52,8 +52,7 @@ var insideText = texts[Math.floor(Math.random()*texts.length)];
 function nextStep(index = 0) {
     result += insideText.charAt(index);
     document.getElementById("typingMachine").innerHTML = result + blinkSpan;
-    if(result.length < insideText.length)
-    {
+    if(result.length < insideText.length) {
     	setTimeout(() => nextStep(++index), 50);
     }
 }
@@ -63,6 +62,8 @@ function nextStep(index = 0) {
 if (justRunIt) {
     runPlayer();
     nextStep();
-    document.getElementById("logo").onclick = function(){ window.location = "https://www.cloudsdalefm.net/"; };
+    document.getElementById("logo").addEventListener("click", () => {
+        window.location = "https://www.cloudsdalefm.net/";
+    })
 }
 })()

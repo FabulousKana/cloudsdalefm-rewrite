@@ -1,7 +1,7 @@
 {
   "short_name": "CloudsdaleFM.net",
   "name": "Cloudsdale FM radio.",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#0a1a26",
   "background_color": "#717171"
